@@ -22,3 +22,5 @@ vendor/gems/*
 db/*.db
 db/data
 .*.sw*
+
+.idea/

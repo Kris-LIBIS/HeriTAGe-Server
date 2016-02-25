@@ -1,5 +1,5 @@
-class Account
-  include Mongoid::Document
+class Account < Mongoid::BaseModel
+
   attr_accessor :password, :password_confirmation
 
   # Fields
@@ -8,6 +8,8 @@ class Account
   field :email, type: String
   field :crypted_password, type: String
   field :role, type: String
+
+  has_many :pois, class_name: 'Poi', dependent: :nullify, order: :u_at.desc
 
   # Validations
   validates_presence_of :email, :role

@@ -38,6 +38,7 @@ Bundler.require(:default, RACK_ENV)
 # Add your before (RE)load hooks here
 #
 Padrino.before_load do
+
 end
 
 ##
@@ -45,5 +46,8 @@ end
 #
 Padrino.after_load do
 end
+
+$LOAD_PATH << Padrino.root('lib')
+$LOAD_PATH << Padrino.root('models')
 
 Padrino.load!

@@ -1,0 +1,55 @@
+- error = @poi.errors.include?(:c_at)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :c_at, :class => 'control-label'
+  .controls
+    =f.text_field :c_at, :class => 'form-control input-large input-with-feedback', :autofocus => true
+    %span.help-inline=error ? f.error_message_on(:c_at, :class => 'text-error') : pat(:example)
+- error = @poi.errors.include?(:u_at)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :u_at, :class => 'control-label'
+  .controls
+    =f.text_field :u_at, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:u_at, :class => 'text-error') : pat(:example)
+- error = @poi.errors.include?(:name)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :name, :class => 'control-label'
+  .controls
+    =f.text_field :name, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:name, :class => 'text-error') : pat(:example)
+- error = @poi.errors.include?(:category)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :category, :class => 'control-label'
+  .controls
+    =f.text_field :category, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:category, :class => 'text-error') : pat(:example)
+- error = @poi.errors.include?(:location)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :location, :class => 'control-label'
+  .controls
+    =f.text_field :location, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:location, :class => 'text-error') : pat(:example)
+- error = @poi.errors.include?(:time_contraint)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :time_contraint, :class => 'control-label'
+  .controls
+    =f.text_field :time_contraint, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:time_contraint, :class => 'text-error') : pat(:example)
+- error = @poi.errors.include?(:europeana)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :europeana, :class => 'control-label'
+  .controls
+    =f.text_field :europeana, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:europeana, :class => 'text-error') : pat(:example)
+- error = @poi.errors.include?(:owner_id)
+%fieldset.control-group{:class => error ? 'has-error' : ''}
+  =f.label :owner_id, :class => 'control-label'
+  .controls
+    =f.text_field :owner_id, :class => 'form-control input-large input-with-feedback'
+    %span.help-inline=error ? f.error_message_on(:owner_id, :class => 'text-error') : pat(:example)
+
+.form-actions
+  =f.submit pat(:save), :class => 'btn btn-primary'
+  &nbsp;
+  =f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue'
+  &nbsp;
+  =link_to pat(:cancel), url(:pois, :index), :class => 'btn btn-default'

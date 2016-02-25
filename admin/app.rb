@@ -32,6 +32,8 @@ module Webserver
     end
 
     access_control.roles_for :admin do |role|
+      role.project_module :devices, '/devices'
+      role.project_module :pois, '/pois'
       role.project_module :accounts, '/accounts'
     end
 

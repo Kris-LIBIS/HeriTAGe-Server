@@ -22,7 +22,7 @@ gem 'bcrypt'
 gem 'sass'
 gem 'haml'
 gem 'mongoid'
-gem 'mongoid-enum'
+gem 'mongoid-enum', '~> 0.3'
 gem 'mongoid-geospatial'
 
 # Test requirements
@@ -43,3 +43,5 @@ gem 'padrino', '0.13.1'
 
 gem 'georuby'
 gem 'pr_geohash'
+
+gem 'uuid'

@@ -1,0 +1,62 @@
+%ul.nav.nav-tabs
+  %li.active=link_to tag_icon(:list, pat(:list)), url(:pois, :index)
+  %li=link_to tag_icon(:plus, pat(:new)), url(:pois, :new)
+
+.tabs-content
+  %table#list.table.table-striped.table-hover.table-condensed
+    %thead
+      %tr
+        %th.header.list-menu
+          .dropdown
+            %a.list-menu-toggle.dropdown-toggle{:href => '#', :'data-toggle' => :dropdown}
+              =tag_icon :magic
+              %span.caret
+            %ul.list-menu.dropdown-menu{:role => :menu}
+              %li.list-menu-wrapper=link_to tag_icon('check-square-o', pat(:select_all)), '#', :id => 'select-all', :class => 'list-menu-link'
+              %li.list-menu-wrapper.list-menu-wrapper-disabled
+                =link_to tag_icon('square-o', pat(:deselect_all)), '#', :id => 'deselect-all', :class => 'list-menu-link list-menu-link-disabled'
+              %li.list-menu-divider.divider
+              %li.list-menu-wrapper.list-menu-wrapper-disabled
+                =link_to tag_icon('trash-o', pat(:delete_selected)), '#', :id => 'delete-selected', :class => 'list-menu-link list-menu-link-disabled'
+                .list-menu-popover-delete-selected.popover.right
+                  .arrow
+                  %h3.popover-title=pat(:delete_selected_title)
+                  .popover-content
+                    = form_tag url(:pois, :destroy_many), :method => :delete do
+                      =hidden_field_tag :poi_ids, :'data-delete-many-ids' => true
+                      =submit_tag pat(:delete), :class =>'list-menu-popover-delete-selected-btn btn btn-danger btn-small'
+                      .btn.btn-default.btn-small.cancel=pat(:cancel)
+        %th.header= mat(:poi, :c_at)
+        %th.header= mat(:poi, :u_at)
+        %th.header= mat(:poi, :name)
+        %th.header= mat(:poi, :category)
+        %th.header= mat(:poi, :location)
+        %th.header= mat(:poi, :time_contraint)
+        %th.header= mat(:poi, :europeana)
+        %th.header= mat(:poi, :owner_id)
+        %th.header.list-row-action-header
+
+    %tbody
+      -@pois.each do |poi|
+        %tr.list-row
+          %td.list-column.list-selectable
+            =check_box_tag 'poi_ids[]', :value => poi.id, :class => 'list-selectable-checkbox'
+          %td.list-column=poi.c_at
+          %td.list-column=poi.u_at
+          %td.list-column=poi.name
+          %td.list-column=poi.category
+          %td.list-column=poi.location
+          %td.list-column=poi.time_contraint
+          %td.list-column=poi.europeana
+          %td.list-column=poi.owner_id
+          %td.list-column.list-row-action
+            .list-row-action-wrapper
+              =link_to tag_icon(:edit), :href => url(:pois, :edit, :id => poi.id), :rel => :tooltip, :title => "#{pat(:edit)} poi", :class => 'list-row-action-wrapper-link'
+              =link_to tag_icon('trash-o'), :rel => :tooltip, :title => "#{pat(:delete)} poi", :class => 'list-row-action-delete-one list-row-action-wrapper-link'
+              .popover.list-row-action-popover-delete-one.left
+                .arrow
+                %h3.popover-title=pat(:delete, :model => "poi")
+                .popover-content
+                  = form_tag url(:pois, :destroy, :id => poi.id), :method => :delete do
+                    =submit_tag pat(:delete), :class =>'list-row-action-popover-delete-one-btn btn btn-danger btn-small'
+                    .btn.btn-default.btn-small.cancel=pat(:cancel)

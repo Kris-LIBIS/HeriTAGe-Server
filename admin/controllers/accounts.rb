@@ -1,6 +1,6 @@
 Webserver::Admin.controllers :accounts do
   get :index do
-    @title = "Accounts"
+    @title = 'Accounts'
     @accounts = Account.all
     render 'accounts/index'
   end
@@ -55,7 +55,7 @@ Webserver::Admin.controllers :accounts do
   end
 
   delete :destroy, :with => :id do
-    @title = "Accounts"
+    @title = 'Accounts'
     account = Account.find(params[:id])
     if account
       if account != current_account && account.destroy
@@ -71,7 +71,7 @@ Webserver::Admin.controllers :accounts do
   end
 
   delete :destroy_many do
-    @title = "Accounts"
+    @title = 'Accounts'
     unless params[:account_ids]
       flash[:error] = pat(:destroy_many_error, :model => 'account')
       redirect(url(:accounts, :index))
