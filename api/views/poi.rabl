@@ -1,1 +1,1 @@
-object @poi => :poi
+object @poi

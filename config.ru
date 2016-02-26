@@ -6,4 +6,8 @@
 
 require File.expand_path('../config/boot.rb', __FILE__)
 
+use Rack::Config do |env|
+  env['api.tilt.root'] = Padrino.root('/api/views')
+end
+
 run Padrino.application

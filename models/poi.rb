@@ -5,10 +5,11 @@ class Poi
 
   # field <name>, :type => <type>, :default => <value>
   field :name, type: String
+  field :preview, type: String
   field :category, type: String
   field :location, type: Point, sphere: true, delegate: true
   field :time_contraint, type: Hash
-  field :metadata, type: Hash
+  field :metadata, type: Hash, default: -> {Hash.new}
 
   belongs_to :owner, class_name: 'User', dependent: :nullify
 

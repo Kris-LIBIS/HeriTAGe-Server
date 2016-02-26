@@ -12,8 +12,8 @@ module Api
       { hello: 'grape' }
     end
 
-    group(:poi) { mount(Api::Poi) }
-    group(:device) { mount(Api::Device) }
-    group(:user) { mount(Api::User) }
+    group(:poi) { mount(Api::PoiRoute) }
+    group(:device) { mount(Api::DeviceRoute) }
+    group(:user) { mount(Api::UserRoute) }
   end
 end

@@ -25,7 +25,6 @@ GEM
     diff-lcs (1.2.5)
     enumerable-lazy (0.0.1)
     equalizer (0.0.11)
-    georuby (2.5.2)
     grape (0.14.0)
       activesupport
       builder
@@ -122,6 +121,9 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     rake (10.5.0)
+    rgeo (0.5.3)
+    rgeo-geojson (0.4.2)
+      rgeo (~> 0.5)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -161,7 +163,6 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bcrypt
-  georuby
   grape
   grape-rabl
   haml
@@ -175,6 +176,7 @@ DEPENDENCIES
   puma
   rack-test
   rake
+  rgeo-geojson
   rspec
   sass
   uuid

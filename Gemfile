@@ -41,7 +41,7 @@ gem 'padrino', '0.13.1'
 #   gem 'padrino-' + g, '0.13.1'
 # end
 
-gem 'georuby'
+gem 'rgeo-geojson'
 gem 'pr_geohash'
 
 gem 'uuid'

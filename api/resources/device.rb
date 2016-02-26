@@ -1,5 +1,5 @@
 module Api
-  class Device < Grape::API
+  class DeviceRoute < Grape::API
 
   end
 end

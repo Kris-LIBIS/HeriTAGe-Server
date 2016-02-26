@@ -1,5 +1,5 @@
 module Api
-  class User < Grape::API
+  class UserRoute < Grape::API
 
   end
 end

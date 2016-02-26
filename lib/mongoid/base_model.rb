@@ -6,6 +6,7 @@ module Mongoid
     def self.included(klass)
       klass.class_eval do
         include Mongoid::Document
+        include Mongoid::Attributes::Dynamic
         include Mongoid::Timestamps::Short
         include Mongoid::Sequence
         field :_id, type: Integer, overwrite: true

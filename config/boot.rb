@@ -51,6 +51,7 @@ $LOAD_PATH << Padrino.root('lib')
 $LOAD_PATH << Padrino.root('models')
 $LOAD_PATH << Padrino.root('api')
 
-ENV['api.tilt.root'] = Padrino.root('/api/views')
+Mongoid::Geospatial.with_rgeo!
+
 
 Padrino.load!
