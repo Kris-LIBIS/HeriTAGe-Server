@@ -20,7 +20,7 @@ Webserver::App.controllers :pois, :provides => [:html,:json] do
   # end
   
   get :index do
-
+    render
   end
 
   get :show do

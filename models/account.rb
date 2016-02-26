@@ -1,5 +1,5 @@
-class Account < Mongoid::BaseModel
-
+class Account
+  include Mongoid::BaseModel
   attr_accessor :password, :password_confirmation
 
   # Fields

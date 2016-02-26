@@ -45,3 +45,9 @@ gem 'georuby'
 gem 'pr_geohash'
 
 gem 'uuid'
+
+gem 'grape'
+gem 'grape-rabl'
+
+gem 'wikipedia-client'
+gem 'awesome_print'

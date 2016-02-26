@@ -10,15 +10,42 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    awesome_print (1.6.1)
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
     bcrypt (3.1.10)
     bson (4.0.2)
     builder (3.2.2)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.2.5)
     enumerable-lazy (0.0.1)
+    equalizer (0.0.11)
     georuby (2.5.2)
+    grape (0.14.0)
+      activesupport
+      builder
+      hashie (>= 2.1.0)
+      multi_json (>= 1.3.2)
+      multi_xml (>= 0.5.2)
+      rack (>= 1.3.0)
+      rack-accept
+      rack-mount
+      virtus (>= 1.0.0)
+    grape-rabl (0.4.1)
+      grape
+      i18n
+      rabl
+      tilt
     haml (4.0.7)
       tilt
+    hashie (3.4.3)
     i18n (0.7.0)
+    ice_nine (0.11.2)
     json (1.8.3)
     macaddr (1.7.1)
       systemu (~> 2.6.2)
@@ -41,6 +68,8 @@ GEM
       mongoid (~> 5.0)
     mongoid-geospatial (5.0.0)
       mongoid (>= 5.0.0.beta)
+    multi_json (1.11.2)
+    multi_xml (0.5.5)
     mustermann19 (0.4.0)
       enumerable-lazy
     oj (2.14.5)
@@ -81,7 +110,13 @@ GEM
       activesupport (>= 3.1)
     pr_geohash (1.0.0)
     puma (2.16.0)
+    rabl (0.12.0)
+      activesupport (>= 2.3.14)
     rack (1.6.4)
+    rack-accept (0.4.5)
+      rack (>= 0.4)
+    rack-mount (0.8.3)
+      rack (>= 1.0.0)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -113,13 +148,22 @@ GEM
       thread_safe (~> 0.1)
     uuid (2.3.8)
       macaddr (~> 1.0)
+    virtus (1.0.5)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
+    wikipedia-client (1.6.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   bcrypt
   georuby
+  grape
+  grape-rabl
   haml
   mocha
   mongoid
@@ -134,6 +178,7 @@ DEPENDENCIES
   rspec
   sass
   uuid
+  wikipedia-client
 
 BUNDLED WITH
    1.11.2
